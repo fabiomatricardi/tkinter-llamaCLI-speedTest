@@ -2,7 +2,11 @@
 
 A lightweight, Python-based graphical interface for **llama.cpp**'s `llama-cli.exe`. This tool allows users to inspect GGUF model metadata, estimate RAM requirements with visual feedback, and benchmark inference performance on local hardware.
 
+### You can find the [executable in the releases HERE](https://github.com/fabiomatricardi/tkinter-llamaCLI-speedTest/releases/tag/llamacpp)
 
+<img src='https://github.com/fabiomatricardi/tkinter-llamaCLI-speedTest/raw/main/GGUF_Bench_v1.5.gif' width=1000>
+
+---
 
 ## 🚀 Key Features
 
