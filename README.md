@@ -4,6 +4,9 @@ A lightweight, Python-based graphical interface for **llama.cpp**'s `llama-cli.e
 
 ### You can find the [executable in the releases HERE](https://github.com/fabiomatricardi/tkinter-llamaCLI-speedTest/releases/tag/llamacpp)
 
+---
+
+
 <img src='https://github.com/fabiomatricardi/tkinter-llamaCLI-speedTest/raw/main/GGUF_Bench_v1.5.gif' width=1000>
 
 ---
