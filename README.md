@@ -1,10 +1,52 @@
-# GGUF Benchmarking & Inspection Tool (v1.5)
+# GGUF Benchmarking & Inspection Tool
 
 A lightweight, Python-based graphical interface for **llama.cpp**'s `llama-cli.exe`. This tool allows users to inspect GGUF model metadata, estimate RAM requirements with visual feedback, and benchmark inference performance on local hardware.
 
-### You can find the [executable in the releases HERE](https://github.com/fabiomatricardi/tkinter-llamaCLI-speedTest/releases/tag/llamacpp)
+### You can find the [executable in the releases HERE](https://github.com/fabiomatricardi/tkinter-llamaCLI-speedTest/releases)
 
 ---
+
+<img width="952" height="652" alt="ver1 6 5" src="https://github.com/user-attachments/assets/e9d508e9-05b0-4446-bcb1-21e137ab7e24" />
+
+---
+
+## 📢 Release Notes: GGUF Benchmarking & Inspector v1.6.5
+
+This update transforms the tool from a basic runner into a comprehensive diagnostic utility for local LLM enthusiasts. By integrating deep log parsing and expanded CLI support, users can now precisely measure how different configurations (like reasoning budgets and context lengths) impact their specific hardware.
+
+**Key Highlights:**
+
+* **Deep Memory Insight:** No more guessing RAM usage. The tool now pulls "Host" memory breakdowns directly from the `llama.cpp` core for high-accuracy visualization.
+* **Reasoning Support:** Fully compatible with "thinking" models (like DeepSeek-R1) via the new `--reasoning-budget` control.
+* **Long-Context Testing:** Support for context windows up to 128k and external prompt files for massive stress tests.
+
+---
+
+## 📝 Detailed Changelog
+
+### [v1.6.5] - 2026-03-19
+
+**Added**
+
+* **Dynamic Generation Control:** Added a "Tokens (-n)" spinbox (0-20,000) to control the length of inference runs.
+* **Save Log Functionality:** New "Save Log" button to export benchmark results and model metadata to timestamped `.txt` files.
+* **Reasoning Budget:** Added `--reasoning-budget` flag support with a range of -1 (unrestricted) to 8192.
+* **Prompt File Support:** Added the ability to load external `.txt` files for long-form prompting, automatically disabling the manual text box when a file is selected.
+
+**Changed**
+
+* **Memory Parsing Engine:** Refactored the regex parser to prioritize the `| - Host |` row from `llama_memory_breakdown_print` for accurate MiB reporting.
+* **UI Layout:** Expanded the geometry and adjusted grid rows to accommodate new parameter controls while maintaining scannability.
+* **Context Limits:** Increased context spinbox maximum to 128,000.
+
+**Fixed**
+
+* **Encoding Issues:** Implemented `errors="replace"` in the subprocess handler to prevent crashes when encountering non-UTF-8 characters in model metadata (e.g., NVIDIA Nemotron models).
+* **Buffer Overwrites:** Added logic to ensure auxiliary buffers (like `CPU_REPACK`) do not overwrite primary model weight stats.
+* **Process Management:** Improved PID tracking and cleanup when the "Stop" button is used.
+
+---
+
 
 
 <img src='https://github.com/fabiomatricardi/tkinter-llamaCLI-speedTest/raw/main/GGUF_Bench_v1.5.gif' width=1000>
